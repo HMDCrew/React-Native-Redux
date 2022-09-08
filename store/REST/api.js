@@ -1,12 +1,13 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import WooCommerceAPI from '../../libs/WooCommerceAPI';
-import { SITE_URL, CONSUMER_KEY, CONSUMER_SECRET } from "@env"
+
+import env from '../../constants/env'
 
 const WooCommerce = new WooCommerceAPI({
-    url: SITE_URL,
+    url: env.SITE_URL,
     ssl: true,
-    consumerKey: CONSUMER_KEY,
-    consumerSecret: CONSUMER_SECRET,
+    consumerKey: env.CONSUMER_KEY,
+    consumerSecret: env.CONSUMER_SECRET,
     wpAPI: true,
     version: 'wc/v3',
     queryStringAuth: true
