@@ -10,7 +10,8 @@
  *the relative requirements is sugested using the style.js file or theme.js in "constants" folder*
 
      style.js => you can find structure like scss file but can you make a functions on it
-     theme.js => you can setup your majority colors used or default sizes it used for bigest project to simplify work
+     theme.js => you can setup your majority colors used or default sizes it used for bigest
+                 project to simplify work
      
      (the fonts is required in file navigation/index.js)
 
