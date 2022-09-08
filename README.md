@@ -61,7 +61,7 @@
 ## Folder "screens":
  *use this folder to build your application pages for StackNavigator in "navigation/index.js"*
 
-ex: screedns/Home.js
+ex: screens/Home.js
 ```js
 class Home extends Component {
     
