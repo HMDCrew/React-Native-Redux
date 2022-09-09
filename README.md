@@ -161,16 +161,6 @@ export default categoriesSlice.reducer;
 ex: store/REST/api.js
 ```js
 
-const WooCommerce = new WooCommerceAPI({
-    url: SITE_URL,
-    ssl: true,
-    consumerKey: CONSUMER_KEY,
-    consumerSecret: CONSUMER_SECRET,
-    wpAPI: true,
-    version: 'wc/v3',
-    queryStringAuth: true
-});
-
 ...
 
 export const getCategories = createAsyncThunk('store/categories', () => {
@@ -184,4 +174,55 @@ export const getCategories = createAsyncThunk('store/categories', () => {
         .catch((err) => console.log(err));
 });
 
+```
+
+
+
+#NOTE:
+example of request woocommerce api from component class
+
+```js
+
+export class People extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      prod: {},
+      isLoaded: false
+    }
+  }
+
+  async componentDidMount() {
+    try {
+      let response = await WooCommerce.get("products", { categories: 16 })
+      this.setState({ prod: response, isLoaded: true })
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  render() {
+
+    const { prod, isLoaded } = this.state;
+
+    return (
+      <View>
+        {
+          isLoaded ?
+            /* i'm used element number 5 in array with products but you can customize this part */
+            <Image
+              source={{ uri: prod[5].images[0].src }}
+              resizeMode="contain"
+              style={{
+                width: 40,
+                height: 40
+              }}
+            />
+            : null
+        }
+      </View>
+    )
+  }
+}
 ```
