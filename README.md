@@ -226,3 +226,12 @@ export class People extends Component {
   }
 }
 ```
+
+# NOTE:
+the store api keys is on file constants/env.js that for problem with compatibility with library *react-native-dotenv*
+usage:
+```js
+import env from './constants/env.js'
+
+console.log(env.SITE_URL);
+```
