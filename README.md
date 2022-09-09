@@ -178,7 +178,7 @@ export const getCategories = createAsyncThunk('store/categories', () => {
 
 
 
-#NOTE:
+# NOTE:
 example of request woocommerce api from component class
 
 ```js
